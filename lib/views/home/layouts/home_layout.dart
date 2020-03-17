@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvc_demo/controllers/home/home_controller.dart';
+import 'package:mvc_demo/controllers/main/main_controller.dart';
 import 'package:mvc_demo/models/home/home_model.dart';
 import 'package:mvc_demo/views/home/components/photo_card.dart';
 import 'package:mvc_demo/views/home/components/photo_error_card.dart';
@@ -8,11 +8,11 @@ import 'package:provider/provider.dart';
 class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    HomeController viewController = HomeController();
+    MainController viewController = MainController();
     final viewModel = Provider.of<HomeModel>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Application MVC Flutter"),
+        title: Text("FlyBank"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
