@@ -45,14 +45,12 @@ class LoginModel extends ChangeNotifier {
     return "ok";
   }
 
-  Future<String> insertUser() async
+  Future<String> insertUser(username, password) async
   {
-    String usernamedefault = 'yohann';
-    String passworddefault = 'test';
-    var result = await getUser("yohann", "test");
+    var result = await getUser(username, password);
     var dbClient = await db;
     if (result == false)
-      dbClient.rawInsert('INSERT INTO User(username, password) VALUES(?, ?)', [usernamedefault, passworddefault]);
+      dbClient.rawInsert('INSERT INTO User(username, password) VALUES(?, ?)', [username, password]);
     return "ok";
   }
 
